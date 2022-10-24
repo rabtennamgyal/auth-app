@@ -1,0 +1,31 @@
+.signupPage {
+    background: #cd37ff;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .signUpContent {
+        height: 40%;
+        width: 40%;
+        border: solid red;
+
+        @include respond(phone) {
+            width: 80%;
+        }
+
+        @include respond(tab) {
+            width: 40%;
+            border: solid rgb(0, 255, 128);
+        }
+        
+        @include respond(desk) {
+            width: 40%;
+            border: solid rgb(0, 132, 255);
+        }
+
+        @include respond(ultra) {
+            width: 60rem;
+            border: solid rgb(255, 145, 0);
+        }
+    }
+}
