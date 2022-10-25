@@ -1,31 +1,81 @@
 .signupPage {
-    background: #cd37ff;
+    background: #ebebeb;
     height: 100vh;
     display: grid;
     place-items: center;
 
     .signUpContent {
-        height: 40%;
+        border-radius: 2rem;
+        height: 60%;
         width: 40%;
-        border: solid red;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        display: grid;
+        grid-template-rows: 20% 60% 20%;
+        background: #fff;
+        font-family: cursive, monospace, sans-serif;
+        // display: flex;
+        // flex-direction: column;
+
+        h1 {
+            color: #0C090A;
+            margin: .5rem 0;
+            place-self: center;
+            font-size: 2.5rem;
+        }
+
+        .form {
+            height: 100%;
+            width: 90%;
+            place-self: center;
+            
+            form {
+                height: inherit;
+                display: flex;
+                flex-direction: column;
+    
+                label {
+                    color: #454545;
+                    font-size: 1.8rem;
+                    margin: 10px 0;
+                }
+
+                input {
+                    height: 15%;
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .btn {
+            display: grid;
+            place-items: center;
+
+            button {
+                color: #fff;
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+                background: #068bff;
+                font-size: 2rem;
+                height: 50%;
+                width: 90%;
+            }
+        }
 
         @include respond(phone) {
             width: 80%;
         }
 
         @include respond(tab) {
-            width: 40%;
-            border: solid rgb(0, 255, 128);
+            width: 60%;
         }
         
         @include respond(desk) {
             width: 40%;
-            border: solid rgb(0, 132, 255);
         }
 
         @include respond(ultra) {
             width: 60rem;
-            border: solid rgb(255, 145, 0);
         }
     }
 }
