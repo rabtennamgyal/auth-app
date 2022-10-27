@@ -5,16 +5,14 @@
     place-items: center;
 
     .signUpContent {
-        border-radius: 2rem;
+        border-radius: 1rem;
         height: 60%;
         width: 40%;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         display: grid;
-        grid-template-rows: 20% 60% 20%;
+        grid-template-rows: 20% 80%;
         background: #fff;
         font-family: cursive, monospace, sans-serif;
-        // display: flex;
-        // flex-direction: column;
 
         h1 {
             color: #0C090A;
@@ -23,42 +21,133 @@
             font-size: 2.5rem;
         }
 
+        .error {
+            border-radius: .5rem;
+            background-color: #ff7e7e;
+            place-self: center;
+            height: 5rem;
+            width: 90%;
+            display: flex;
+
+            h1 {
+                margin-left: 5%;
+                color: #d11616;
+                font-size: 2rem;
+            }
+        }
+
         .form {
             height: 100%;
             width: 90%;
             place-self: center;
-            
-            form {
-                height: inherit;
-                display: flex;
-                flex-direction: column;
-    
-                label {
-                    color: #454545;
-                    font-size: 1.8rem;
-                    margin: 10px 0;
-                }
+            display: flex;
+            flex-direction: column;
 
-                input {
-                    height: 15%;
-                    font-size: 2rem;
-                }
+            label {
+                color: #454545;
+                font-size: 1.8rem;
+                margin: 10px 0;
             }
-        }
 
-        .btn {
-            display: grid;
-            place-items: center;
+            input {
+                height: 12%;
+                font-size: 2rem;
+            }
 
             button {
+                margin-top: 5rem;
+                place-self: center;
                 color: #fff;
                 cursor: pointer;
                 border: none;
                 border-radius: 10px;
                 background: #068bff;
                 font-size: 2rem;
-                height: 50%;
-                width: 90%;
+                height: 13%;
+                width: 100%;
+            }
+        }
+
+        @include respond(phone) {
+            width: 80%;
+        }
+
+        @include respond(tab) {
+            width: 60%;
+        }
+        
+        @include respond(desk) {
+            width: 40%;
+        }
+
+        @include respond(ultra) {
+            width: 60rem;
+        }
+    }
+
+    .signUpContentError {
+        border-radius: 1rem;
+        height: 60%;
+        width: 40%;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        display: grid;
+        //grid-template-rows: 15% 15% 70%;
+        grid-template-rows: 15% 15% 70%;
+        background: #fff;
+        font-family: cursive, monospace, sans-serif;
+
+        h1 {
+            color: #0C090A;
+            margin: .5rem 0;
+            place-self: center;
+            font-size: 2.5rem;
+        }
+
+        .error {
+            border-radius: .5rem;
+            background-color: #ff7e7e;
+            place-self: center;
+            height: 5rem;
+            width: 90%;
+            display: flex;
+
+            h1 {
+                margin-left: 5%;
+                color: #d11616;
+                font-size: 2rem;
+            }
+        }
+
+        .form {
+            grid-row: 3 / 4;
+            height: 100%;
+            width: 90%;
+            place-self: center;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: #454545;
+                font-size: 1.8rem;
+                margin: 10px 0;
+            }
+
+            input {
+                height: 12%;
+                font-size: 2rem;
+            }
+
+            button {
+                margin-top: 5rem;
+                place-self: center;
+                color: #fff;
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+                background: #068bff;
+                font-size: 2rem;
+                height: 13%;
+                width: 100%;
             }
         }
 
