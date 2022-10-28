@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../context/authContext';
+import { auth } from '../firebase';
+
 
 
 function SignUp() {
@@ -8,7 +10,7 @@ function SignUp() {
     const confirmRef = useRef();
     const { signup, currentUser } = useAuth();
     const [error, setError] = useState('');
-    const [loading, setLoaing] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -22,8 +24,8 @@ function SignUp() {
 
         try {
             setError('');
-            setLoaing(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
+            setLoading(true);
+            await signup(auth, emailRef.current.value, passwordRef.current.value)
         } catch {
             const form = document.getElementById('form');
             form.classList.remove('signUpContent');
@@ -31,7 +33,7 @@ function SignUp() {
             setError('Failed to create an account.');
         }
 
-        setLoaing(false);
+        setLoading(false);
     };
 
     return (
@@ -40,10 +42,6 @@ function SignUp() {
                 <h1>
                     Sign Up
                 </h1>
-
-                {
-                    currentUser && currentUser.email
-                }
 
                 {error && 
 
@@ -66,13 +64,13 @@ function SignUp() {
                         Password:
                     </label>
 
-                    <input id='password' ref={passwordRef} />
+                    <input id='password' type='password' ref={passwordRef} />
 
                     <label htmlFor='confirm'>
                         Password Confirmation:
                     </label>
 
-                    <input id='confirm' ref={confirmRef} />
+                    <input id='confirm' type='password'  ref={confirmRef} />
                     <button id='signupButton' disabled={loading}>
                         Sign Up
                     </button>

@@ -1,4 +1,7 @@
 @mixin respond($breakpoint) {
+
+    // width media 
+
     @if $breakpoint == phone {
         @media (min-width: 0px) and (max-width: 700px) {
             @content;
@@ -19,6 +22,14 @@
 
     @if $breakpoint == ultra {
         @media (min-width: 1501px) and (max-width: 10000px) {
+            @content;
+        }
+    }
+
+    // height media 
+
+    @if $breakpoint == heightSmall {
+        @media (min-height: 0px) and (max-height: 700px) {
             @content;
         }
     }
