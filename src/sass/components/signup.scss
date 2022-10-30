@@ -58,8 +58,21 @@
                 font-size: 2rem;
             }
 
-            button {
+            #signUpButton {
                 margin-top: 5rem;
+                place-self: center;
+                color: #fff;
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+                background: #068bff;
+                font-size: 2rem;
+                height: 13%;
+                width: 100%;
+            }
+
+            #linkSignUp {
+                margin-top: 2rem;
                 place-self: center;
                 color: #fff;
                 cursor: pointer;
@@ -140,8 +153,21 @@
                 font-size: 2rem;
             }
 
-            button {
+            #signUpButton {
                 margin-top: 3rem;
+                place-self: center;
+                color: #fff;
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+                background: #068bff;
+                font-size: 2rem;
+                height: 13%;
+                width: 100%;
+            }
+            
+            #linkSignUp {
+                margin-top: 2rem;
                 place-self: center;
                 color: #fff;
                 cursor: pointer;

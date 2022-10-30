@@ -1,27 +1,19 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
+import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
 
 
 
-function SignUp() {
+function LogIn() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const confirmRef = useRef();
     const { signup } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
-
-        if (passwordRef.current.value !== confirmRef.current.value) {
-            const form = document.getElementById('form');
-            form.classList.remove('signUpContent');
-            form.classList.add('signUpContentError');
-            return setError('Passwords do not match.');
-        };
 
         try {
             setError('');
@@ -41,7 +33,7 @@ function SignUp() {
         <div className='signupPage'> 
             <div className='signUpContent' id='form'>
                 <h1>
-                    Sign Up
+                    Log In
                 </h1>
 
                 {error && 
@@ -67,23 +59,18 @@ function SignUp() {
 
                     <input id='password' type='password' ref={passwordRef} />
 
-                    <label htmlFor='confirm'>
-                        Password Confirmation:
-                    </label>
-
-                    <input id='confirm' type='password'  ref={confirmRef} />
 
                     <button id='signUpButton' disabled={loading}>
-                        Sign Up
+                        Log In
                     </button>
 
-                    <div className='linkLogIn'>
-                        Already have an account ? <Link to='/login'>Log In</Link>
-                    </div>
+                    <button id='linkSignUp'>
+                        <Link to='/signup'>Sign Up</Link>
+                    </button>
                 </form>
             </div>
         </div>
     )
 };
 
-export default SignUp;
+export default LogIn;
