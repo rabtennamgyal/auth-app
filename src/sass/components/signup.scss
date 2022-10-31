@@ -71,17 +71,33 @@
                 width: 100%;
             }
 
-            #linkSignUp {
+            #link {
                 margin-top: 2rem;
-                place-self: center;
-                color: #fff;
-                cursor: pointer;
-                border: none;
-                border-radius: 10px;
-                background: #068bff;
-                font-size: 2rem;
                 height: 13%;
                 width: 100%;
+                //border: solid red;
+
+                #linkSignUp {
+                    place-self: center;
+                    color: #fff;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 10px;
+                    background: #068bff;
+                    font-size: 2rem;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .linkLogIn {
+                margin: 5px 0;
+                font-size: 1rem;
+
+                a {
+                    color: #068bff;
+                    text-decoration: none;
+                }
             }
         }
 
@@ -166,17 +182,33 @@
                 width: 100%;
             }
             
-            #linkSignUp {
+            #link {
                 margin-top: 2rem;
-                place-self: center;
-                color: #fff;
-                cursor: pointer;
-                border: none;
-                border-radius: 10px;
-                background: #068bff;
-                font-size: 2rem;
                 height: 13%;
                 width: 100%;
+                //border: solid red;
+
+                #linkSignUp {
+                    place-self: center;
+                    color: #fff;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 10px;
+                    background: #068bff;
+                    font-size: 2rem;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            
+            .linkLogIn {
+                margin: 5px 0;
+                font-size: 1rem;
+
+                a {
+                    color: #068bff;
+                    text-decoration: none;
+                }
             }
         }
 

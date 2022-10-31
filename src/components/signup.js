@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 import { auth } from '../firebase';
 
@@ -12,6 +12,7 @@ function SignUp() {
     const { signup } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -26,7 +27,11 @@ function SignUp() {
         try {
             setError('');
             setLoading(true);
-            await signup(auth, emailRef.current.value, passwordRef.current.value)
+            const form = document.getElementById('form');
+            form.classList.remove('signUpContentError');
+            form.classList.add('signUpContent');
+            await signup(auth, emailRef.current.value, passwordRef.current.value);
+            navigate('/');
         } catch {
             const form = document.getElementById('form');
             form.classList.remove('signUpContent');

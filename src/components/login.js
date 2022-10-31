@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../context/authContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
 
@@ -8,9 +8,11 @@ import { auth } from '../firebase';
 function LogIn() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { signup } = useAuth();
+    const { login } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -18,12 +20,13 @@ function LogIn() {
         try {
             setError('');
             setLoading(true);
-            await signup(auth, emailRef.current.value, passwordRef.current.value)
+            await login(auth, emailRef.current.value, passwordRef.current.value);
+            navigate('/');
         } catch {
             const form = document.getElementById('form');
             form.classList.remove('signUpContent');
             form.classList.add('signUpContentError');
-            setError('Failed to create an account.');
+            setError('Failed to log in.');
         }
 
         setLoading(false);
@@ -64,9 +67,11 @@ function LogIn() {
                         Log In
                     </button>
 
-                    <button id='linkSignUp'>
-                        <Link to='/signup'>Sign Up</Link>
-                    </button>
+                    <Link to='/signup' id='link'>
+                        <button id='linkSignUp'>
+                            Sign Up
+                        </button>
+                    </Link>
                 </form>
             </div>
         </div>
