@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
+import { auth } from "../firebase";
 
 
 
 function Dashboard() {
+    const navigate = useNavigate();
     const [error, setError] = useState('');
     const { currentUser, logout } = useAuth();
-    const navigate = useNavigate();
 
     async function handleLogOut() {
         setError('');
 
         try {
-            await logout();
+            await logout(auth);
             navigate('/login');
         } catch {
             setError('Failed to log out.')

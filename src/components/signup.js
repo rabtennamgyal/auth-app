@@ -5,6 +5,7 @@ import { auth } from '../firebase';
 
 
 
+
 function SignUp() {
     const emailRef = useRef();
     const passwordRef = useRef();
