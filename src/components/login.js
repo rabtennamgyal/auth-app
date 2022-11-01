@@ -20,6 +20,9 @@ function LogIn() {
         try {
             setError('');
             setLoading(true);
+            const form = document.getElementById('form');
+            form.classList.remove('signUpContentError');
+            form.classList.add('signUpContent');
             await login(auth, emailRef.current.value, passwordRef.current.value);
             navigate('/');
         } catch {
@@ -73,6 +76,12 @@ function LogIn() {
                         </button>
                     </Link>
                 </form>
+
+                <div className='passwordReset'>
+                    <Link to='/forgot-password'>
+                        Forgot Password ?
+                    </Link>
+                </div>
             </div>
         </div>
     )

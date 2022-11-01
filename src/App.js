@@ -1,6 +1,7 @@
 import SignUp from "./components/signup";
 import Login from "./components/login";
 import Dashboard from "./components/dashboard";
+import ForgotPassword from './components/forgotPassword';
 import PrivateRoute from "./components/PrivateRoutes";
 import { AuthProvider } from "./context/authContext";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -15,6 +16,7 @@ function App() {
             <Route exact path='/' element={  <PrivateRoute><Dashboard /></PrivateRoute>} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/forgot-password' element={<ForgotPassword />} />
           </Routes>
         </AuthProvider>
       </BrowserRouter>
