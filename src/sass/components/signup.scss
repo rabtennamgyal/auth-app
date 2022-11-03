@@ -135,7 +135,7 @@
         width: 40%;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         display: grid;
-        grid-template-rows: 15% 15% 70%;
+        grid-template-rows: 15% 10% 75%;
         background: #fff;
         font-family: cursive, monospace, sans-serif;
 
@@ -197,7 +197,6 @@
                 margin-top: 2rem;
                 height: 13%;
                 width: 100%;
-                //border: solid red;
 
                 #linkSignUp {
                     place-self: center;

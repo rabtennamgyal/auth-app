@@ -26,9 +26,9 @@ function LogIn() {
             await login(auth, emailRef.current.value, passwordRef.current.value);
             navigate('/');
         } catch {
-            // const form = document.getElementById('form');
-            // form.classList.remove('signUpContent');
-            // form.classList.add('signUpContentError');
+            const form = document.getElementById('form');
+            form.classList.remove('signUpContent');
+            form.classList.add('signUpContentError');
             setError('Failed to log in.');
         }
 
